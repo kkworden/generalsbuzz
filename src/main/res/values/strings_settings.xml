@@ -1,0 +1,35 @@
+<resources>
+
+    <string name="title_activity_settings">Settings</string>
+
+    <string name="pref_pta_title">PTA Events</string>
+    <string name="pref_schoolboard_title">School Board Events</string>
+    <string name="pref_exam_title">Exams</string>
+    <string name="pref_special_title">Special Events</string>
+    <string name="pref_break_title">Breaks</string>
+    <string name="pref_importantstudent_title">Important Student Events</string>
+    <string name="pref_assembly_title">Assemblies</string>
+    
+    <string name="pref_pta_desc">(e.g. PTA fundraisers, PTA meetings)</string>
+    <string name="pref_schoolboard_desc">(e.g. school board meetings, votings)</string>
+    <string name="pref_exam_desc">(e.g. quarter assessments, PSAT\'s)</string>
+    <string name="pref_special_desc">(e.g. guests, visits)</string>
+    <string name="pref_break_desc">(e.g. holidays, early release)</string>
+    <string name="pref_importantstudent_desc">(e.g. field trips, pictures, dances, celebrations)</string>
+    <string name="pref_assembly_desc">(e.g. heritage assemblies, auditions)</string>
+    
+    <string name="pref_months_title">Simultaneously load months</string>
+    <string name="pref_months_dialogtitle">Months</string>
+    <string-array name="pref_months_choices">
+        <item>1 month</item>
+        <item>2 months</item>
+        <item>3 months</item>
+    </string-array>
+    
+    <string-array name="pref_months_values">
+        <item>1</item>
+        <item>2</item>
+        <item>3</item>
+    </string-array>
+
+</resources>

@@ -1,0 +1,19 @@
+<RelativeLayout android:id="@+id/event_header"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="fill_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/white" >
+    
+    <TextView
+        android:id="@+id/event_header_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="2dp"
+        android:layout_marginBottom="2dp"
+        android:textStyle="bold"
+        android:textColor="@color/text_color"
+        android:text=""
+        android:textSize="14sp" />
+
+</RelativeLayout><!-- From: file:/C:/Users/Centurion/AndroidStudioProjects/generalsbuzz/app/src/main/res/layout/view_event_header.xml -->

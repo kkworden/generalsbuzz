@@ -1,0 +1,65 @@
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android" >
+
+    <PreferenceCategory 
+        android:title="Settings" >
+        
+        <ListPreference
+            android:defaultValue="1"
+	        android:entries="@array/pref_months_choices"
+	        android:entryValues="@array/pref_months_values"
+	        android:key="pref_months"
+	        android:negativeButtonText="@null"
+	        android:positiveButtonText="@null"
+	        android:dialogTitle="@string/pref_months_dialogtitle"
+	        android:title="@string/pref_months_title" />
+        
+    </PreferenceCategory>
+    
+    <PreferenceCategory 
+        android:title="Filters" >
+    
+	    <CheckBoxPreference
+	        android:defaultValue="true"
+	        android:key="pref_pta"
+	        android:summary="@string/pref_pta_desc"
+	        android:title="@string/pref_pta_title" />
+	    
+	    <CheckBoxPreference
+	        android:defaultValue="true"
+	        android:key="pref_schoolboard"
+	        android:summary="@string/pref_schoolboard_desc"
+	        android:title="@string/pref_schoolboard_title" />
+	    
+	    <CheckBoxPreference
+	        android:defaultValue="true"
+	        android:key="pref_assembly"
+	        android:summary="@string/pref_assembly_desc"
+	        android:title="@string/pref_assembly_title" />
+
+        <CheckBoxPreference
+            android:defaultValue="true"
+            android:key="pref_break"
+            android:summary="@string/pref_break_desc"
+            android:title="@string/pref_break_title" />
+
+	    <CheckBoxPreference
+	        android:defaultValue="true"
+	        android:key="pref_exam"
+	        android:summary="@string/pref_exam_desc"
+	        android:title="@string/pref_exam_title" />
+	    
+	    <CheckBoxPreference
+	        android:defaultValue="true"
+	        android:key="pref_importantstudent"
+	        android:summary="@string/pref_importantstudent_desc"
+	        android:title="@string/pref_importantstudent_title" />
+	    
+	    <CheckBoxPreference
+	        android:defaultValue="true"
+	        android:key="pref_special"
+	        android:summary="@string/pref_special_desc"
+	        android:title="@string/pref_special_title" />
+	</PreferenceCategory>
+	
+</PreferenceScreen>
+<!-- From: file:/C:/Users/Centurion/AndroidStudioProjects/generalsbuzz/app/src/main/res/xml/pref_general.xml -->

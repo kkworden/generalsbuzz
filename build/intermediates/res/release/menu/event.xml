@@ -1,0 +1,17 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context="me.kworden.wlcalendar2.MainActivity" >
+
+    <item
+        android:id="@+id/action_event_hide"
+        android:orderInCategory="100"
+        android:title="@string/action_event_hide" />
+    
+    <item
+        android:id="@+id/action_event_remind"
+        android:orderInCategory="1000"
+        android:title="@string/action_event_remind" />
+
+</menu>
+<!-- From: file:/C:/Users/Centurion/AndroidStudioProjects/generalsbuzz/app/src/main/res/menu/event.xml -->

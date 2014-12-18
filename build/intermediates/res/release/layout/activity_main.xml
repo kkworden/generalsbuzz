@@ -1,0 +1,18 @@
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/layout_main_wrapper"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="@dimen/activity_margin"
+    android:background="@color/white"
+    tools:context="me.kworden.wlcalendar2.MainActivity"
+    tools:ignore="MergeRootFrame" >
+
+    <fragment
+        android:id="@+id/frag_main_content"
+        android:name="me.kworden.wlcalendar2.fragment.EventDisplayFragment"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        tools:layout="@layout/fragment_main" />
+
+</FrameLayout><!-- From: file:/C:/Users/Centurion/AndroidStudioProjects/generalsbuzz/app/src/main/res/layout/activity_main.xml -->

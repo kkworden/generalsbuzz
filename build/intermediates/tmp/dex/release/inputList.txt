@@ -1,0 +1,4 @@
+C:\Users\Centurion\AndroidStudioProjects\generalsbuzz\app\build\intermediates\classes\release
+C:\Users\Centurion\AndroidStudioProjects\generalsbuzz\app\build\intermediates\pre-dexed\release\KWAndroidUtils-149ce3a529ce0bdcd2eb291697e6150e80f77946.jar
+C:\Users\Centurion\AndroidStudioProjects\generalsbuzz\app\build\intermediates\pre-dexed\release\classes-89641874a73572c0213c8814704685fb52c12180.jar
+C:\Users\Centurion\AndroidStudioProjects\generalsbuzz\app\build\intermediates\pre-dexed\release\support-v4-19.1.0-df50544ffdb2713ad54d4eda613e45e39d166988.jar

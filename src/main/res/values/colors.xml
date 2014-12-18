@@ -1,0 +1,10 @@
+<resources>
+    <color name="navy">#1C468A</color>
+    <color name="navylight">#4A78C2</color>
+    <color name="white">#FFFFFF</color>
+    <color name="black">#000000</color>
+    <color name="text_color">#333333</color>
+    <color name="linebreak">#1C468A</color>
+    <color name="background_color">#E2E2E2</color>
+    <color name="row_color">#ECECEC</color>
+</resources>

@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">Generals Buzz</string>
+    
+    <string name="action_settings">Settings</string>
+    <string name="action_update">Update</string>
+    
+    <string name="action_event_hide">Hide events like this</string>
+    <string name="action_event_remind">Set reminder</string>
+</resources>
