@@ -4,7 +4,7 @@
         android:title="Settings" >
         
         <ListPreference
-            android:defaultValue="1"
+            android:defaultValue="2"
 	        android:entries="@array/pref_months_choices"
 	        android:entryValues="@array/pref_months_values"
 	        android:key="pref_months"

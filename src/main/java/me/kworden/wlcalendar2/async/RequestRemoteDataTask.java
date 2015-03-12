@@ -58,6 +58,6 @@ public class RequestRemoteDataTask extends AsyncTask<MonthYearParcel, Void, STAT
 		if(p_status.equals(STATUS.REMOTE_REQUEST_FAILED))
 			Toast.makeText(m_context, "Unable to contact apsva.us", Toast.LENGTH_SHORT).show();
 		else
-			Toast.makeText(m_context, "Remote request successful", Toast.LENGTH_SHORT).show();
+			Toast.makeText(m_context, "Retrieving data from apsva.us", Toast.LENGTH_SHORT).show();
 	}
 }

@@ -3,14 +3,20 @@
     <!-- From: file:/C:/Users/Centurion/AndroidStudioProjects/generalsbuzz/app/src/main/res/values/strings_settings.xml -->
     <eat-comment/>
     <string-array name="pref_months_choices">
-        <item>1 month</item>
         <item>2 months</item>
         <item>3 months</item>
+        <item>4 months</item>
+        <item>6 months</item>
+        <item>1 year</item>
+        <item>ad infinitum</item>
     </string-array>
     <string-array name="pref_months_values">
-        <item>1</item>
         <item>2</item>
         <item>3</item>
+        <item>4</item>
+        <item>6</item>
+        <item>12</item>
+        <item>0</item>
     </string-array>
     <!-- From: file:/C:/Users/Centurion/AndroidStudioProjects/generalsbuzz/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/19.1.0/res/values/values.xml -->
     <eat-comment/>
@@ -143,8 +149,8 @@
     <!-- From: file:/C:/Users/Centurion/AndroidStudioProjects/generalsbuzz/app/src/main/res/values/dimens.xml -->
     <eat-comment/>
     <dimen name="event_row_border">8dp</dimen>
-    <dimen name="event_row_padding">32dp</dimen>
-    <dimen name="event_row_padding_right">48dp</dimen>
+    <dimen name="event_row_padding">38dp</dimen>
+    <dimen name="event_row_padding_right">52dp</dimen>
     <!-- From: file:/C:/Users/Centurion/AndroidStudioProjects/generalsbuzz/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/19.1.0/res/values/values.xml -->
     <eat-comment/>
     <item name="action_bar_activity_content" type="id"/>
@@ -203,6 +209,7 @@
     <style name="ActionBarTitle" parent="@style/Widget.AppCompat.ActionBar">
         <item name="android:textColor">@color/white</item>
         <item name="android:textSize">18sp</item>
+        <item name="android:layout_marginLeft">20dp</item>
         <item name="android:layout_margin">@dimen/activity_margin</item>
     </style>
     <!-- From: file:/C:/Users/Centurion/AndroidStudioProjects/generalsbuzz/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/19.1.0/res/values/values.xml -->

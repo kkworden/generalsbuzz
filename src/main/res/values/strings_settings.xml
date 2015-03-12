@@ -21,15 +21,21 @@
     <string name="pref_months_title">Simultaneously load months</string>
     <string name="pref_months_dialogtitle">Months</string>
     <string-array name="pref_months_choices">
-        <item>1 month</item>
         <item>2 months</item>
         <item>3 months</item>
+        <item>4 months</item>
+        <item>6 months</item>
+        <item>1 year</item>
+        <item>ad infinitum</item>
     </string-array>
     
     <string-array name="pref_months_values">
-        <item>1</item>
         <item>2</item>
         <item>3</item>
+        <item>4</item>
+        <item>6</item>
+        <item>12</item>
+        <item>0</item>
     </string-array>
 
 </resources>

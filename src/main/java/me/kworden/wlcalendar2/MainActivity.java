@@ -37,6 +37,8 @@ public class MainActivity extends Activity
 		APP.sharedPreferences = PreferenceManager.getDefaultSharedPreferences(this);
 		
 		m_event_display = new EventDisplayFragment();
+
+		APP.repull = true;
 	}
 	
 	@Override
@@ -75,7 +77,7 @@ public class MainActivity extends Activity
 			
 			// Do an update. //
 			Intent t_intent = new Intent(BROADCAST.CHECK_LOCAL_DATA);
-			t_intent.putExtra("MONTHS", APP.getDatesToLoad(Integer.parseInt(APP.sharedPreferences.getString("pref_months", "1"))));
+			t_intent.putExtra("MONTHS", APP.getDatesToLoad());
 			LocalBroadcastManager.getInstance(this).sendBroadcast(t_intent);
 			
 			m_inited = true;
@@ -83,7 +85,7 @@ public class MainActivity extends Activity
 		else if(APP.repull)
 		{
 			Intent t_intent = new Intent(BROADCAST.CHECK_LOCAL_DATA);
-			t_intent.putExtra("MONTHS", APP.getDatesToLoad(Integer.parseInt(APP.sharedPreferences.getString("pref_months", "1"))));
+			t_intent.putExtra("MONTHS", APP.getDatesToLoad());
 			LocalBroadcastManager.getInstance(this).sendBroadcast(t_intent);
 			APP.repull = false;
 		}
@@ -127,7 +129,7 @@ public class MainActivity extends Activity
 				startActivity(new Intent(this, SettingsActivity.class));
 				return true;
 			case R.id.action_update:
-				new RequestRemoteDataTask(this).execute(APP.getDatesToLoad(Integer.parseInt(APP.sharedPreferences.getString("pref_months", "1"))));
+				new RequestRemoteDataTask(this).execute(APP.getDatesToLoad());
 				return true;
 			case android.R.id.home:
 				leaveInfoFragment(true);
@@ -141,7 +143,7 @@ public class MainActivity extends Activity
 					this.leaveInfoFragment(false);
 					APP.sharedPreferences.edit().putBoolean(APP.currentEvent.type.getPreference(), false).commit();
 					Intent t_intent = new Intent(BROADCAST.CHECK_LOCAL_DATA);
-					t_intent.putExtra("MONTHS", APP.dates);
+					t_intent.putExtra("MONTHS", APP.getDatesToLoad());
 					LocalBroadcastManager.getInstance(this).sendBroadcast(t_intent);
 					Toast.makeText(this, "Similar events hidden.", Toast.LENGTH_SHORT).show();
 				}

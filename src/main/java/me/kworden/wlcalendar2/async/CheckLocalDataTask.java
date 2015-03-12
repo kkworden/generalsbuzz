@@ -3,9 +3,11 @@ package me.kworden.wlcalendar2.async;
 import java.util.ArrayList;
 
 import me.kworden.wlcalendar2.struct.MonthYearParcel;
+import me.kworden.wlcalendar2.util.APP;
 import me.kworden.wlcalendar2.util.STATUS;
 import android.content.Context;
 import android.os.AsyncTask;
+import android.widget.Toast;
 
 public class CheckLocalDataTask extends AsyncTask<MonthYearParcel, Void, STATUS>
 {
@@ -44,6 +46,12 @@ public class CheckLocalDataTask extends AsyncTask<MonthYearParcel, Void, STATUS>
 	@Override
 	public void onPostExecute(STATUS p_status)
 	{
+		if(Integer.parseInt(APP.sharedPreferences.getString("pref_months", "1")) == 0)
+		{
+			Toast.makeText(m_context, "W-L doesn't exist in the year 3053!", Toast.LENGTH_SHORT).show();
+			return;
+		}
+
 		// Execute the desired task based on whether or not the local data file exists. m_files.toArray() is used because AsyncTasks can only take arrays //
 		if(p_status.equals(STATUS.LOCAL_DATA_FOUND))
 		{

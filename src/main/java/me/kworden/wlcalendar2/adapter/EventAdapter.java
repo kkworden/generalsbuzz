@@ -11,6 +11,7 @@ import me.kworden.wlcalendar2.struct.WLEventClassifier;
 import me.kworden.wlcalendar2.util.APP;
 import me.kworden.wlcalendar2.util.BROADCAST;
 
+import android.animation.ObjectAnimator;
 import android.animation.ValueAnimator;
 import android.content.Intent;
 import android.graphics.Typeface;
@@ -142,20 +143,21 @@ public class EventAdapter extends BaseAdapter
 					((TextView)v.findViewById(R.id.event_title)).setTextSize(24);
 					v.setBackgroundResource(R.color.white);
 
-					ValueAnimator paddingAnim = ValueAnimator.ofInt(0);
-					paddingAnim.setDuration(700);
+					ValueAnimator paddingAnim = ObjectAnimator.ofFloat(0);
+					paddingAnim.setDuration(300);
 					paddingAnim.addUpdateListener(new ValueAnimator.AnimatorUpdateListener()
 					{
 						@Override
 						public void onAnimationUpdate(ValueAnimator valueAnimator)
 						{
-							v.setPadding(Integer.parseInt(valueAnimator.getAnimatedValue().toString()), Integer.parseInt(valueAnimator.getAnimatedValue().toString()),
-									Integer.parseInt(valueAnimator.getAnimatedValue().toString()), Integer.parseInt(valueAnimator.getAnimatedValue().toString()));
+							v.setPadding((int)Float.parseFloat(valueAnimator.getAnimatedValue().toString()), (int)Float.parseFloat(valueAnimator.getAnimatedValue().toString()),
+									(int)Float.parseFloat(valueAnimator.getAnimatedValue().toString()), (int)Float.parseFloat(valueAnimator.getAnimatedValue().toString()));
+							v.requestLayout();
 						}
 					});
 
-					ValueAnimator positionAnim = ValueAnimator.ofFloat(0);
-					positionAnim.setDuration(700);
+					ValueAnimator positionAnim = ObjectAnimator.ofFloat(v, "y", 0);
+					positionAnim.setDuration(300);
 					positionAnim.addUpdateListener(new ValueAnimator.AnimatorUpdateListener()
 					{
 						@Override
@@ -188,12 +190,15 @@ public class EventAdapter extends BaseAdapter
 						{
 							switch(p_item.getItemId())
 							{
+								// Edit the preferences to hide a certain event type //
 								case R.id.action_event_hide:
 									if(!t_event.type.getPreference().equals("null"))
 									{
 										APP.sharedPreferences.edit().putBoolean(t_event.type.getPreference(), false).commit();
+
+										// Reload the events //
 										Intent t_intent = new Intent(BROADCAST.CHECK_LOCAL_DATA);
-										t_intent.putExtra("MONTHS", APP.dates);
+										t_intent.putExtra("MONTHS", APP.getDatesToLoad());
 										LocalBroadcastManager.getInstance(m_main_activity).sendBroadcast(t_intent);
 										Toast.makeText(m_main_activity, "Similar events hidden.", Toast.LENGTH_SHORT).show();
 									}

@@ -76,7 +76,8 @@ public class ParseDataTask extends AsyncTask<String, Void, ArrayList<WLEvent>>
 
 					i_t_event.date = t_date;
 					i_t_event.type = WLEventClassifier.getMatchingEvent(getEventStyle(i_t_td), i_t_td.getTextContent());
-					
+
+					// If the app preferences specify not to show this type of event, let's continue //
 					if(i_t_event.type == WLEventClassifier.EXAM && !(APP.sharedPreferences.getBoolean("pref_exam", true)))
 						continue;
 					else if(i_t_event.type == WLEventClassifier.SCHOOL_BOARD && !(APP.sharedPreferences.getBoolean("pref_schoolboard", true)))
@@ -170,10 +171,26 @@ public class ParseDataTask extends AsyncTask<String, Void, ArrayList<WLEvent>>
 					NodeList t_span_list = ((Element)p_td).getElementsByTagName("span");
 					for(int iii = 0; iii < t_span_list.getLength(); iii++)
 					{
+						Node t_span = t_span_list.item(iii);
+
 						if(iii == 0)
 							t_event.location = t_span_list.item(iii).getTextContent().trim().replace("Location: ", "");
 						else if(iii == 1)
-							t_event.info = t_span_list.item(iii).getTextContent().trim();
+						{
+							NodeList t_info_div_list = ((Element)t_span).getElementsByTagName("div");
+							if(t_info_div_list.getLength() > 1)
+							{
+								t_event.info = "";
+
+								for(int iiii = 0; iiii < t_info_div_list.getLength(); iiii++)
+								{
+									t_event.info += t_info_div_list.item(iiii).getTextContent().trim() + System.getProperty("line.separator");
+									System.out.println("NEW LINE AHAHAHAHA");
+								}
+							}
+							else
+								t_event.info = t_span_list.item(iii).getTextContent().trim().replace("<br>", System.getProperty("line.separator"));
+						}
 					}
 				}
 			}
